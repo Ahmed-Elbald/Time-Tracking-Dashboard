@@ -32,7 +32,7 @@ let request, array;
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  request = fetch("../data.json");
+  request = fetch("./data.json");
 
   request.then(request => request.json())
     .then(data => {
@@ -99,10 +99,7 @@ function clearContainer() {
 
   let child = cardsContainer.lastElementChild;
   while (cardsContainer.children.length > 1) {
-    if (!child.classList.contains("card--main")) {
-      console.log(true);
-      cardsContainer.removeChild(child)
-    };
+    if (!child.classList.contains("card--main")) cardsContainer.removeChild(child);
     child = cardsContainer.lastElementChild;
   }
 
